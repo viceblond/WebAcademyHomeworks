@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let calc = function Calculator() {
+            let data1 = 0
+            let data2 = 0
+            
+            read()
+            {
+                prompt("Введите 2 числа: ", data1, data2)
+            }
+
+            sum()
+            {
+                return data1 + data2
+            }
+
+            mul()
+            {
+                return data1 * data2
+            }
+        }
+
+        calc = new calc();
+
+        calc.read();
+
+        alert("Sum: " + calc.sum());
+        alert("Multiplication: " + calc.mul());
+    </script>
+</body>
+</html>
