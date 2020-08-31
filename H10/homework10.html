@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+</head>
+<body>
+    <script name="exercise1">
+        /*Напишите функцию printNumbers(from, to), которая выводит число
+        каждую секунду, начиная от from и заканчивая to.*/
+
+        function printNumbers(from, to)
+        {
+            let main = from;
+
+            let counter = setInterval(() => {
+                if(main <= to)
+                {
+                    console.log(main);
+                }
+                main++;
+            }, 1000);
+        }
+
+        printNumbers(0, 25);
+    </script>
+    <script name="exercise2">
+        /*Напишите функцию, которая последовательно выводит в консоль числа
+        от 1 до 20, с интервалом между числами 100мс. То есть, весь вывод
+        должен занимать 2000мс, в течение которых каждые 100мс в консоли
+        появляется очередное число.*/
+
+        function controlInterval()
+        {
+            let data1 = 1;
+            const data2 = 20;
+
+            let counter = setInterval(()=>{
+                if(data1 <= data2)
+                {
+                    console.log(data1);
+                }
+                data1++;
+            },100);
+        }
+
+        controlInterval();
+    </script>
+    <script name="exercise3">
+        /*Встроенная функция setTimeout использует callback-функции. Создать альтернативу, успользующую промисы.
+        Функция delay(ms) должна возвращать промис, который перейдёт в состояние "выполнен" через ms миллисекунд, так чтобы мы могли прибавить к нему .then*/
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        delay(500).then(()=>console.log("Done after 5 milliseconds"));
+    </script>
+</body>
+</html>
